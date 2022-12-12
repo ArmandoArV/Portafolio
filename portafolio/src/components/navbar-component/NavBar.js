@@ -14,6 +14,9 @@ export default function NavBar() {
                     <a href="/Experience">Experience</a>
                 </li>
                 <li className="Navbar-item">
+                    <a href="/Articles">Articles</a>
+                </li>
+                <li className="Navbar-item">
                     <a href="/Prizes">Prizes</a>
                 </li>
                 <li className="Navbar-item">
