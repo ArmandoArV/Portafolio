@@ -8,13 +8,13 @@ export default function NavBar() {
             <ul className="Navbar-list">
 
                 <li className="Navbar-item">
-                    <a href="/About">About</a>
+                    <a href="#About">About</a>
                 </li>
                 <li className="Navbar-item">
-                    <a href="/Experience">Experience</a>
+                    <a href="#Experience">Experience</a>
                 </li>
                 <li className="Navbar-item">
-                    <a href="/Articles">Articles</a>
+                    <a href="#Articles">Articles</a>
                 </li>
                 <li className="Navbar-item">
                     <a href="/Prizes">Prizes</a>

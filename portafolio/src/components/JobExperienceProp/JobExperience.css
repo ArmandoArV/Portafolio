@@ -1,0 +1,33 @@
+.Job-experience {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    color: #f5f5f5;
+    background-color: #333;
+}
+
+.Job-experience .Job-title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: right;
+} 
+
+.Job-experience .Job-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.Job-experience .Job-date {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.Job-experience .Job-description {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

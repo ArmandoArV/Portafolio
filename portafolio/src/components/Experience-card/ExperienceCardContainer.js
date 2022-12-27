@@ -3,15 +3,23 @@ import styles from "./ExperienceCardContainer.css";
 import JobExperienceProp from "../JobExperienceProp/JobExperienceProp";
 
 export default function ExperienceCardContainer() {
-    return(
-        <div className="Card2" id = "experience">
-            <h1 className="Card-title">Experience</h1>
-            <JobExperienceProp style={styles.JobExperienceProp} title="IKTAN ROVING" subtitle = "Software Developer | Frontend" date = "Oct 2021 - Present" description = "During 2022 edition of NASA’s Human Rover Exploration Challenge is an international competition where
-the main task is building from scratch a manned Rover, had the key role of coding sensors, establishing
-communication between the vehicle telemetry and the web page where anyone could check for the stats of
-the pilots, and designing tools using SolidWorks for sample retrieval. This helped me communicate and
-reinforce my teamwork abilities, which gave us as a team the first-place Overall winner category."/>
-            <JobExperienceProp style={styles.JobExperienceProp} title="holi" subtitle = "Software Developer | Backend" date = "Oct 2021 - Present" description = "During 2022 edition of NASA’s Human Rover Exploration Challenge is an international competition where"/>
-        </div>
-    )
+  return (
+    <div className="Card2" id="Experience">
+      <h1 className="Card-title">Experience</h1>
+      <ul className="timeline">
+        <li>
+          <div className="timeline-event">
+            <JobExperienceProp
+              style={styles.JobExperienceProp}
+              title="IKTAN ROVING"
+              subtitle="Frontend Developer"
+              date="Oct 2021 - Present"
+              description="As a member of the team, I was responsible for programming sensors and developing the graphical interface that was used to visualize telemetry data. This data included gas sensors, vital signs, and real-time vehicle position, and was sent and stored in a database. I am proud to say that our team won first place at the international level for our efforts in this area."
+            />
+          </div>
+        </li>
+        ...
+      </ul>
+    </div>
+  );
 }

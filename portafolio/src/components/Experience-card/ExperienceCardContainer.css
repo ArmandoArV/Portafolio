@@ -1,14 +1,41 @@
-.Card2{
-    width: 80%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    margin: 5% auto 0;
+.Card-title{
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-weight: 500;
+  background-image : var(--customGradient);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0 auto;
+  animation: gradient 5s ease infinite, cursor 1s infinite step-end, typing 15s infinite steps(16) ;
+  white-space: nowrap;
+  overflow: hidden;
+  background-size: 400% 400%;
+
 }
+
+.timeline {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .timeline li {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+  .timeline li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #333;
+    margin-left: -1px;
+  }
+  
+  .timeline li:after {
+    content: ''
+  }
