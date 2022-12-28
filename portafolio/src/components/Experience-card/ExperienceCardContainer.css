@@ -1,3 +1,7 @@
+.Card2{
+  margin-top: 10%;
+}
+
 .Card-title{
   font-size: clamp(1.5rem, 5vw, 4rem);
   font-weight: 500;
@@ -10,14 +14,13 @@
   white-space: nowrap;
   overflow: hidden;
   background-size: 400% 400%;
-
 }
 
 .timeline {
     list-style: none;
     position: relative;
     padding: 0;
-    margin: 0;
+    margin-top: 5%;
   }
   
   .timeline li {
