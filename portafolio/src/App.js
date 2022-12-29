@@ -9,10 +9,13 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 function App() {
   return (
     <div className="App">
+      <>
         <NavBar />
+        <Tesseract/>
         <CardsContainer />
-        <Tesseract />
         <ExperienceCardContainer />
+        
+      </>
     </div>
   );
 }

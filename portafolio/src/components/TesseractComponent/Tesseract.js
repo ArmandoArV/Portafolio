@@ -1,9 +1,10 @@
 import React from 'react';
 import * as THREE from 'three';
+import { Line } from 'three';
+import styles from './Tesseract.css';
 
 
-
-class Tesseract extends React.Component {
+class Tesseract extends React.Component  {
   componentDidMount() {
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
@@ -22,18 +23,30 @@ class Tesseract extends React.Component {
     this.mount.appendChild(this.renderer.domElement)  
 
     //ADD TESSERACT
-    const size = 8;
-    const widthSegments = 2;
-    const heightSegments = 2;
-    const depthSegments = 2;
-    const boxGeometry = new THREE.BoxGeometry(
-        size, size, size,
-        widthSegments, heightSegments, depthSegments);
-    const tesseractGeometry = new THREE.EdgesGeometry(boxGeometry);
-    const tesseractMaterial = new THREE.MeshBasicMaterial({ color: '#ffffff' });
-    this.tesseract = new THREE.Mesh(tesseractGeometry, tesseractMaterial);
-    this.scene.add(this.tesseract);
+    const size = 5;
+    const widthSegments = 15;
+    const heightSegments = 15;
+    const depthSegments = 15;
+    const secondBoxGeometry = new THREE.BoxGeometry(
+        size, size, size);
+    const tesseractGeometry = new THREE.BoxGeometry(widthSegments,heightSegments,depthSegments);
 
+    const tesseractMaterial = new THREE.MeshBasicMaterial({ color: '#ffffff', wireframe: true });
+    const secondTesseractMaterial = new THREE.MeshBasicMaterial({ color: '#ffffff', wireframe: true });
+    this.tesseract = new THREE.Mesh(tesseractGeometry, tesseractMaterial);
+    this.secondTesseract = new THREE.Mesh(secondBoxGeometry, secondTesseractMaterial);
+
+    const boxGeo = new THREE.BoxGeometry(widthSegments,heightSegments,depthSegments),
+    edgeGeo = new THREE.EdgesGeometry(boxGeo),
+    line = new THREE.LineSegments(
+            edgeGeo,
+            new THREE.LineBasicMaterial({
+                color: new THREE.Color('white')
+            }));
+   // this.scene.add(line);
+    this.scene.add(this.secondTesseract);
+    this.scene.add(this.tesseract);
+    //this.scene.add(line);
     //ANIMATE TESSERACT
     this.animateTesseract();
   }
@@ -46,6 +59,15 @@ class Tesseract extends React.Component {
   animateTesseract() {
     this.tesseract.rotation.x += 0.01;
     this.tesseract.rotation.y += 0.01;
+    this.tesseract.rotation.z += 0.01;
+    this.secondTesseract.rotation.x += -0.01;
+    this.secondTesseract.rotation.y += -0.01;
+    // Move around the screen the tesseract
+    this.tesseract.position.x = Math.sin(this.tesseract.rotation.x * 2) * 10;
+    this.tesseract.position.y = Math.cos(this.tesseract.rotation.y * 2) * 10;
+    this.tesseract.position.z = Math.cos(this.tesseract.rotation.y * 2) * 10;
+    this.secondTesseract.position.x = Math.sin(this.secondTesseract.rotation.x * 2) * 10;
+    this.secondTesseract.position.y = Math.cos(this.secondTesseract.rotation.y * 2) * 10;
 
     this.renderScene();
     this.frameId = window.requestAnimationFrame(this.animateTesseract.bind(this));
@@ -58,7 +80,7 @@ class Tesseract extends React.Component {
   render() {
     return (
       <div
-        style={{ width: '400px', height: '400px' }}
+        className="tesseract"
         ref={(mount) => { this.mount = mount; }}
       />
     );
